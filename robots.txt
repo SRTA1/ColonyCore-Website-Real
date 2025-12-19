@@ -1,0 +1,4 @@
+# robots.txt — allows all crawlers
+User-agent: *
+Allow: /
+Sitemap: https://colonycore.io/sitemap.xml
