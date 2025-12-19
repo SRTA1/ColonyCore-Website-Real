@@ -37,4 +37,18 @@ display:flex;align-items:center;justify-content:center;margin-top:1.5rem}
 @keyframes slideIn{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
 .fade-in-up{animation:fadeInUp 0.6s ease-out forwards}
 .fade-in{animation:fadeIn 0.8s ease-out forwards}
+/* Feature Tours */
+#tour-overlay{position:fixed;top:0;left:0;right:0;bottom:0;z-index:1000;display:flex;align-items:center;justify-content:center}
+.tour-backdrop{position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:1}
+.tour-tooltip{position:relative;z-index:2;background:#111827;border:1px solid #facc15;border-radius:12px;padding:2rem;max-width:500px;box-shadow:0 20px 60px rgba(0,0,0,0.8);animation:slideIn 0.3s ease-out}
+.tour-tooltip h3{color:#facc15;margin-bottom:1rem;font-size:1.3rem}
+.tour-tooltip p{color:#9ca3af;line-height:1.6;margin-bottom:2rem}
+.tour-close{position:absolute;top:1rem;right:1rem;background:none;border:none;color:#9ca3af;font-size:1.5rem;cursor:pointer;transition:color 0.2s}
+.tour-close:hover{color:#facc15}
+.tour-nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:2rem;padding-top:1rem;border-top:1px solid #1f2937}
+.tour-nav button{padding:0.5rem 1rem;border:1px solid #1f2937;background:none;color:#9ca3af;border-radius:6px;cursor:pointer;transition:all 0.2s}
+.tour-nav button:hover:not(:disabled){color:#facc15;border-color:#facc15}
+.tour-nav button:disabled{opacity:0.5;cursor:not-allowed}
+.tour-counter{color:#9ca3af;font-size:0.9rem}
+@media(max-width:640px){.tour-tooltip{max-width:90%;padding:1.5rem}}
 @media(prefers-reduced-motion:no-preference){section{opacity:0;animation:fadeInUp 0.8s ease-out forwards;animation-delay:0.1s}}

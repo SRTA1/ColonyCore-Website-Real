@@ -97,6 +97,32 @@ built for how drone service providers actually work.
 </div>
 </section>
 
+<!-- ROI Calculator Widget -->
+<section style="background: linear-gradient(135deg, rgba(250, 204, 21, 0.1) 0%, rgba(11, 95, 255, 0.05) 100%); padding: 4rem 2rem; margin: 4rem 0; border-radius: 12px;">
+<h2 style="text-align: center; margin-bottom: 1rem; color: #facc15;">How Much Could You Save?</h2>
+<p style="text-align: center; color: #9ca3af; max-width: 600px; margin: 0 auto 2rem;">Get a personalized ROI estimate based on your fleet size and admin overhead. See exactly what ColonyCore is worth to your operation.</p>
+
+<div style="max-width: 700px; margin: 0 auto; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 2rem; border-radius: 12px;">
+<form id="roi-calculator-form" style="display: grid; gap: 1.5rem;">
+<div>
+<label for="fleet-size" style="display: block; color: #facc15; font-weight: 600; margin-bottom: 0.5rem;">How many drones?</label>
+<input type="number" id="fleet-size" name="fleet-size" value="5" min="1" max="100" style="width: 100%; padding: 0.75rem; border: 1px solid #1f2937; border-radius: 6px; background: #06090f; color: #e5e7eb; font-size: 1rem;">
+</div>
+<div>
+<label for="admin-hours" style="display: block; color: #facc15; font-weight: 600; margin-bottom: 0.5rem;">Admin hours per week?</label>
+<input type="number" id="admin-hours" name="admin-hours" value="10" min="1" max="60" style="width: 100%; padding: 0.75rem; border: 1px solid #1f2937; border-radius: 6px; background: #06090f; color: #e5e7eb; font-size: 1rem;">
+</div>
+<button type="submit" class="btn" style="width: 100%; font-size: 1rem; padding: 0.85rem;">Calculate My Savings</button>
+</form>
+
+<div id="roi-results" style="margin-top: 2rem;"></div>
+</div>
+
+<div style="text-align: center; margin-top: 2rem;">
+<a href="pages/roi-calculator.html" style="color: #facc15; text-decoration: none; font-weight: 600;">See detailed breakdown →</a>
+</div>
+</section>
+
 <!-- Customer Logos -->
 <section style="background: rgba(11, 95, 255, 0.03); padding: 3rem 2rem; margin: 4rem 0; border-radius: 12px;">
 <p style="text-align: center; color: #9ca3af; font-size: 0.9rem; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">Trusted by Leading Drone Operations</p>
@@ -223,6 +249,7 @@ built for how drone service providers actually work.
 </div>
 </footer>
 
+<script src="../js/roi-calculator.js"></script>
 <script src="../js/social-proof.js"></script>
 </body>
 </html>

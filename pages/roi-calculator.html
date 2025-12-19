@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROI Calculator | ColonyCore</title>
+<meta name="description" content="Calculate your annual savings with ColonyCore. See exactly how much admin time, cash flow delays, and hiring costs you'll save.">
+<link rel="canonical" href="https://colonycore.io/pages/roi-calculator.html">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="icon" href="../icons/favicon.svg" type="image/svg+xml">
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<style>
+.roi-calculator-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.calculator-inputs {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  margin-bottom: 2rem;
+}
+
+.input-group label {
+  display: block;
+  color: #facc15;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #1f2937;
+  border-radius: 6px;
+  background: #06090f;
+  color: #e5e7eb;
+  font-size: 1rem;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #facc15;
+  box-shadow: 0 0 8px rgba(250,204,21,0.2);
+}
+
+.input-group span {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.roi-result {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.savings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.savings-item {
+  background: rgba(11, 95, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(11, 95, 255, 0.2);
+  text-align: center;
+}
+
+.savings-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #facc15;
+  margin-bottom: 0.5rem;
+}
+
+.savings-label {
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+#roi-results {
+  display: none;
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="container">
+<a href="index.html" class="logo">ColonyCore</a>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="features.html">Features</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+</nav>
+
+<main>
+<section style="background: linear-gradient(135deg, rgba(11, 95, 255, 0.05) 0%, rgba(250, 204, 21, 0.05) 100%); padding: 4rem 2rem; border-radius: 12px; margin-bottom: 3rem;">
+<h1 style="font-size: 3rem;">Calculate Your Savings</h1>
+<p class="sub" style="font-size: 1.25rem;">See exactly how much you'll save in admin time, cash flow delays, and hiring costs with ColonyCore.</p>
+</section>
+
+<section class="roi-calculator-container">
+<div class="calculator-inputs">
+<form id="roi-calculator-form">
+<div class="input-group">
+<label for="fleet-size">How many drones do you operate?</label>
+<input type="number" id="fleet-size" name="fleet-size" value="5" min="1" max="100">
+<span>Current fleet size (defaults to 5)</span>
+</div>
+
+<div class="input-group">
+<label for="admin-hours">Admin time per week (jobs, scheduling, invoicing, logs)?</label>
+<input type="number" id="admin-hours" name="admin-hours" value="10" min="1" max="60">
+<span>Hours spent on manual workflows (defaults to 10)</span>
+</div>
+
+<button type="submit" class="btn" style="width: 100%; font-size: 1.1rem; padding: 1rem;">Calculate My Savings</button>
+</form>
+</div>
+
+<div id="roi-results"></div>
+
+<div style="background: rgba(250, 204, 21, 0.05); padding: 2rem; border-radius: 12px; margin-top: 4rem;">
+<h2 style="margin-bottom: 1.5rem;">How We Calculate Your Savings</h2>
+<div style="display: grid; gap: 1.5rem;">
+<div>
+<h3 style="color: #facc15; margin-bottom: 0.5rem;">📋 Admin Time Savings</h3>
+<p style="color: #9ca3af;">
+10 hours/week spent on scheduling, job entry, invoicing, flight logging. 
+At $35/hour average, that's <strong>$18K-20K/year</strong> in labor cost.
+</p>
+</div>
+<div>
+<h3 style="color: #facc15; margin-bottom: 0.5rem;">💰 Cash Flow Improvement</h3>
+<p style="color: #9ca3af;">
+Manual invoicing delays payment 40-50 days. ColonyCore cuts it to 15-20 days.
+Faster cash = working capital improvement of <strong>$5K-15K</strong> monthly.
+</p>
+</div>
+<div>
+<h3 style="color: #facc15; margin-bottom: 0.5rem;">👥 No Hire Required to Scale</h3>
+<p style="color: #9ca3af;">
+Growing past 5-8 pilots normally requires hiring an admin ($50K/year).
+ColonyCore lets you scale to 20+ pilots without new hires = <strong>$50K saved</strong>.
+</p>
+</div>
+<div>
+<h3 style="color: #facc15; margin-bottom: 0.5rem;">🔐 Compliance Risk Avoidance</h3>
+<p style="color: #9ca3af;">
+Manual flight logs fail FAA audits. Potential fine: $25K+. 
+ColonyCore provides audit-ready records automatically.
+</p>
+</div>
+</div>
+</div>
+
+<div style="margin-top: 4rem; padding: 2rem; background: rgba(11, 95, 255, 0.05); border-radius: 12px; text-align: center;">
+<h2 style="margin-bottom: 1rem;">Ready to See the Impact?</h2>
+<p style="color: #9ca3af; margin-bottom: 2rem;">Get a personalized demo tailored to your operation size and pain points.</p>
+<a class="btn" href="contact.html" style="font-size: 1.1rem; padding: 1rem 2rem;">Request a Demo</a>
+</div>
+</section>
+</main>
+
+<footer style="background: #06090f; border-top: 1px solid #1f2937; padding: 3rem 0; margin-top: 4rem;">
+<div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+<div>
+<h4 style="color: #facc15; margin-bottom: 1rem;">Product</h4>
+<ul style="list-style: none; padding: 0;">
+<li style="margin-bottom: 0.5rem;"><a href="features.html" style="color: #9ca3af;">Features</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="pricing.html" style="color: #9ca3af;">Pricing</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="contact.html" style="color: #9ca3af;">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 style="color: #facc15; margin-bottom: 1rem;">Resources</h4>
+<ul style="list-style: none; padding: 0;">
+<li style="margin-bottom: 0.5rem;"><a href="case-studies.html" style="color: #9ca3af;">Case Studies</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="blog.html" style="color: #9ca3af;">Blog & Guides</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="roi-calculator.html" style="color: #9ca3af;">ROI Calculator</a></li>
+</ul>
+</div>
+<div>
+<h4 style="color: #facc15; margin-bottom: 1rem;">Trust & Security</h4>
+<ul style="list-style: none; padding: 0;">
+<li style="margin-bottom: 0.5rem;"><a href="security.html" style="color: #9ca3af;">Security & Compliance</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="privacy.html" style="color: #9ca3af;">Privacy Policy</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="terms.html" style="color: #9ca3af;">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 style="color: #facc15; margin-bottom: 1rem;">Company</h4>
+<p style="color: #9ca3af; font-size: 0.9rem;">Colony Core, LLC<br>→ En route to the next job</p>
+</div>
+</div>
+<div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #1f2937; text-align: center; color: #6b7280; font-size: 0.9rem;">
+<p>&copy; 2025 Colony Core, LLC. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+<script src="../js/roi-calculator.js"></script>
+</body>
+</html>
