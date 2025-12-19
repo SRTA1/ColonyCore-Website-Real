@@ -30,7 +30,49 @@
 We’re onboarding pilots and service providers in cohorts.
 Tell us about your operation and we’ll follow up if you’re a fit.
 </p>
-<div class="media">[PLACEHOLDER] Squarespace Form Block</div>
+
+<form name="early-access" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="max-width: 600px; margin: 2rem auto;">
+<!-- Honeypot field for spam prevention -->
+<p style="display: none;">
+<label>Don't fill this out if you're human: <input name="bot-field" /></label>
+</p>
+
+<p>
+<label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Name *</label>
+<input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 1px solid #333; border-radius: 4px; background: #1a1a1a; color: #fff; font-size: 1rem;">
+</p>
+
+<p>
+<label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email *</label>
+<input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid #333; border-radius: 4px; background: #1a1a1a; color: #fff; font-size: 1rem;">
+</p>
+
+<p>
+<label for="company" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Company</label>
+<input type="text" id="company" name="company" style="width: 100%; padding: 0.75rem; border: 1px solid #333; border-radius: 4px; background: #1a1a1a; color: #fff; font-size: 1rem;">
+</p>
+
+<p>
+<label for="operation-size" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Operation Size</label>
+<select id="operation-size" name="operation-size" style="width: 100%; padding: 0.75rem; border: 1px solid #333; border-radius: 4px; background: #1a1a1a; color: #fff; font-size: 1rem;">
+<option value="">Select...</option>
+<option value="solo">Solo pilot</option>
+<option value="2-5">2-5 pilots</option>
+<option value="6-10">6-10 pilots</option>
+<option value="11+">11+ pilots</option>
+</select>
+</p>
+
+<p>
+<label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Tell us about your operation</label>
+<textarea id="message" name="message" rows="4" style="width: 100%; padding: 0.75rem; border: 1px solid #333; border-radius: 4px; background: #1a1a1a; color: #fff; font-size: 1rem; resize: vertical;"></textarea>
+</p>
+
+<p>
+<button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Request Early Access</button>
+</p>
+</form>
+
 </section>
 </main>
 
