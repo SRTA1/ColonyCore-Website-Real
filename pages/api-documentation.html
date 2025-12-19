@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>API Documentation | ColonyCore</title>
+<meta name="description" content="ColonyCore REST API for integrations, custom workflows, and automation.">
+<link rel="canonical" href="https://colonycore.io/pages/api-documentation.html">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="icon" href="../icons/favicon.svg" type="image/svg+xml">
+
+<style>
+.api-grid {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.api-nav {
+  background: rgba(15, 23, 42, 0.8);
+  padding: 1.5rem;
+  border-radius: 8px;
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+}
+
+.api-nav h4 {
+  color: #facc15;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.api-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.api-nav li {
+  margin-bottom: 0.75rem;
+}
+
+.api-nav a {
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.api-nav a:hover, .api-nav a.active {
+  color: #facc15;
+}
+
+.api-content {
+  max-width: 900px;
+}
+
+.endpoint {
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.endpoint h3 {
+  color: #facc15;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.method {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+}
+
+.method.get { background: rgba(34, 197, 94, 0.2); color: #22c55e; }
+.method.post { background: rgba(59, 130, 246, 0.2); color: #3b82f6; }
+.method.put { background: rgba(251, 146, 60, 0.2); color: #fb923c; }
+.method.delete { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+
+.code-block {
+  background: #06090f;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 1rem 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  border: 1px solid #1f2937;
+}
+
+.code-block code {
+  color: #e5e7eb;
+}
+
+.response-example {
+  background: rgba(250, 204, 21, 0.05);
+  border-left: 3px solid #facc15;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+}
+
+.auth-note {
+  background: rgba(59, 130, 246, 0.05);
+  border-left: 3px solid #3b82f6;
+  padding: 1rem;
+  margin: 2rem 0;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .api-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .api-nav {
+    position: relative;
+    top: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="container">
+<a href="index.html" class="logo">ColonyCore</a>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="features.html">Features</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+</nav>
+
+<main>
+<section style="background: linear-gradient(135deg, rgba(11, 95, 255, 0.1) 0%, rgba(250, 204, 21, 0.1) 100%); padding: 3rem 2rem; border-radius: 12px; margin-bottom: 3rem;">
+<h1>API Documentation</h1>
+<p class="sub">Build custom integrations with the ColonyCore REST API. Automate workflows, sync data, and unlock programmatic access to your entire operation.</p>
+<a href="help.html">← Back to Help Center</a>
+</section>
+
+<div class="api-grid">
+<div class="api-nav">
+<h4>Getting Started</h4>
+<ul>
+<li><a href="#authentication">Authentication</a></li>
+<li><a href="#rate-limits">Rate Limits</a></li>
+<li><a href="#errors">Error Handling</a></li>
+<li><a href="#webhooks">Webhooks</a></li>
+</ul>
+
+<h4 style="margin-top: 2rem;">Resources</h4>
+<ul>
+<li><a href="#jobs">Jobs</a></li>
+<li><a href="#flights">Flights</a></li>
+<li><a href="#equipment">Equipment</a></li>
+<li><a href="#invoices">Invoices</a></li>
+<li><a href="#customers">Customers</a></li>
+<li><a href="#payments">Payments</a></li>
+</ul>
+
+<h4 style="margin-top: 2rem;">SDKs</h4>
+<ul>
+<li><a href="#python-sdk">Python SDK</a></li>
+<li><a href="#javascript-sdk">JavaScript SDK</a></li>
+<li><a href="#go-sdk">Go SDK</a></li>
+</ul>
+</div>
+
+<div class="api-content">
+<h2 id="authentication" style="color: #facc15; margin-bottom: 1.5rem;">Authentication</h2>
+
+<div class="auth-note">
+<strong>API Key Required:</strong> All requests must include your API key in the Authorization header.
+</div>
+
+<div class="code-block">curl https://api.colonycore.io/v1/jobs \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"</div>
+
+<p>Get your API key at <code>Account Settings → Integrations → API Keys</code>. Keys are scoped to your organization. Regenerate keys annually for security.</p>
+
+<h2 id="rate-limits" style="color: #facc15; margin-top: 3rem; margin-bottom: 1rem;">Rate Limits</h2>
+<ul>
+<li><strong>Free Plan:</strong> 10 requests/minute</li>
+<li><strong>Pro Plan:</strong> 100 requests/minute</li>
+<li><strong>Enterprise:</strong> Custom limits</li>
+</ul>
+
+<h2 id="errors" style="color: #facc15; margin-top: 3rem; margin-bottom: 1rem;">Error Handling</h2>
+
+<div class="code-block">{
+  "error": {
+    "code": "INVALID_REQUEST",
+    "message": "Missing required field: job_id",
+    "details": {
+      "field": "job_id"
+    }
+  }
+}</div>
+
+<p>HTTP status codes: 400 (bad request), 401 (auth failed), 404 (not found), 429 (rate limit), 500 (server error).</p>
+
+<h2 id="webhooks" style="color: #facc15; margin-top: 3rem; margin-bottom: 1rem;">Webhooks</h2>
+
+<p>Subscribe to events and get real-time notifications:</p>
+
+<div class="code-block">POST /v1/webhooks
+{
+  "url": "https://your-app.com/webhooks",
+  "events": ["job.created", "flight.completed", "invoice.paid"]
+}</div>
+
+<p><strong>Events:</strong> job.created, job.updated, flight.completed, invoice.created, invoice.paid, payment.received</p>
+
+<h2 id="jobs" style="color: #facc15; margin-top: 4rem; margin-bottom: 1.5rem;">Jobs</h2>
+
+<div class="endpoint">
+<h3><span class="method get">GET</span> /v1/jobs</h3>
+<p>List all jobs for your account.</p>
+
+<div class="code-block">curl https://api.colonycore.io/v1/jobs \
+  -H "Authorization: Bearer YOUR_API_KEY"</div>
+
+<div class="response-example">
+<strong>Response:</strong>
+<div class="code-block">{
+  "data": [
+    {
+      "id": "job_12345",
+      "client": "SkyLine Contractors",
+      "description": "Solar panel roof inspection",
+      "location": "123 Oak St, Denver CO",
+      "status": "completed",
+      "scheduled_date": "2025-01-15",
+      "duration_hours": 2.5,
+      "rate": 500.00,
+      "created_at": "2025-01-14T10:30:00Z"
+    }
+  ],
+  "pagination": {
+    "page": 1,
+    "limit": 20,
+    "total": 150
+  }
+}</div>
+</div>
+</div>
+
+<div class="endpoint">
+<h3><span class="method post">POST</span> /v1/jobs</h3>
+<p>Create a new job.</p>
+
+<div class="code-block">curl -X POST https://api.colonycore.io/v1/jobs \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "client": "SkyLine Contractors",
+    "description": "Solar panel roof inspection",
+    "location": "123 Oak St, Denver CO",
+    "scheduled_date": "2025-01-15",
+    "duration_hours": 2.5,
+    "rate": 500.00
+  }'</div>
+
+<div class="response-example">
+<strong>Response:</strong>
+<div class="code-block">{
+  "id": "job_12345",
+  "status": "scheduled",
+  "created_at": "2025-01-14T10:30:00Z"
+}</div>
+</div>
+</div>
+
+<h2 id="flights" style="color: #facc15; margin-top: 3rem; margin-bottom: 1.5rem;">Flights</h2>
+
+<div class="endpoint">
+<h3><span class="method get">GET</span> /v1/flights/{job_id}</h3>
+<p>Get all flights for a job.</p>
+
+<div class="code-block">curl https://api.colonycore.io/v1/flights/job_12345 \
+  -H "Authorization: Bearer YOUR_API_KEY"</div>
+
+<div class="response-example">
+<strong>Response:</strong>
+<div class="code-block">{
+  "data": [
+    {
+      "id": "flight_abc123",
+      "job_id": "job_12345",
+      "drone_serial": "DJI123456789",
+      "duration_minutes": 45,
+      "altitude_max": 250,
+      "distance_km": 3.2,
+      "battery_used": 65,
+      "started_at": "2025-01-15T10:00:00Z",
+      "ended_at": "2025-01-15T10:45:00Z",
+      "weather": {
+        "temperature": 15,
+        "wind_speed": 12,
+        "visibility": "good"
+      }
+    }
+  ]
+}</div>
+</div>
+</div>
+
+<h2 id="invoices" style="color: #facc15; margin-top: 3rem; margin-bottom: 1.5rem;">Invoices</h2>
+
+<div class="endpoint">
+<h3><span class="method post">POST</span> /v1/invoices</h3>
+<p>Generate an invoice from a job.</p>
+
+<div class="code-block">curl -X POST https://api.colonycore.io/v1/invoices \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "job_id": "job_12345",
+    "rate_type": "hourly",
+    "rate_amount": 200.00,
+    "send_to_client": true
+  }'</div>
+
+<div class="response-example">
+<strong>Response:</strong>
+<div class="code-block">{
+  "id": "invoice_xyz789",
+  "job_id": "job_12345",
+  "amount": 500.00,
+  "status": "sent",
+  "payment_url": "https://pay.colonycore.io/inv_xyz789",
+  "created_at": "2025-01-15T11:00:00Z"
+}</div>
+</div>
+</div>
+
+<h2 id="customers" style="color: #facc15; margin-top: 3rem; margin-bottom: 1.5rem;">Customers</h2>
+
+<div class="endpoint">
+<h3><span class="method get">GET</span> /v1/customers</h3>
+<p>List all customers.</p>
+
+<div class="code-block">curl https://api.colonycore.io/v1/customers \
+  -H "Authorization: Bearer YOUR_API_KEY"</div>
+</div>
+
+<div class="endpoint">
+<h3><span class="method post">POST</span> /v1/customers</h3>
+<p>Create a new customer.</p>
+
+<div class="code-block">curl -X POST https://api.colonycore.io/v1/customers \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "SkyLine Contractors",
+    "email": "contact@skyline.com",
+    "phone": "+1-303-555-0123",
+    "address": "123 Oak St, Denver CO"
+  }'</div>
+</div>
+
+<h2 id="payments" style="color: #facc15; margin-top: 3rem; margin-bottom: 1.5rem;">Payments</h2>
+
+<div class="endpoint">
+<h3><span class="method get">GET</span> /v1/payments/{invoice_id}</h3>
+<p>Check payment status for an invoice.</p>
+
+<div class="code-block">curl https://api.colonycore.io/v1/payments/invoice_xyz789 \
+  -H "Authorization: Bearer YOUR_API_KEY"</div>
+
+<div class="response-example">
+<strong>Response:</strong>
+<div class="code-block">{
+  "status": "paid",
+  "amount": 500.00,
+  "payment_method": "credit_card",
+  "paid_at": "2025-01-16T14:30:00Z",
+  "transaction_id": "txn_abc123"
+}</div>
+</div>
+</div>
+
+<h2 id="python-sdk" style="color: #facc15; margin-top: 4rem; margin-bottom: 1.5rem;">Python SDK</h2>
+
+<div class="code-block">pip install colonycore
+
+from colonycore import ColonyCore
+
+client = ColonyCore(api_key="YOUR_API_KEY")
+
+# Create job
+job = client.jobs.create(
+    client="SkyLine Contractors",
+    description="Roof inspection",
+    location="Denver, CO",
+    rate=500.00
+)
+
+# Get flights
+flights = client.flights.list(job_id=job.id)
+
+# Generate invoice
+invoice = client.invoices.create(
+    job_id=job.id,
+    rate_type="hourly",
+    send_to_client=True
+)</div>
+
+<h2 id="javascript-sdk" style="color: #facc15; margin-top: 3rem; margin-bottom: 1.5rem;">JavaScript SDK</h2>
+
+<div class="code-block">npm install colonycore-sdk
+
+const ColonyCore = require('colonycore-sdk');
+const client = new ColonyCore({ apiKey: 'YOUR_API_KEY' });
+
+// Create job
+const job = await client.jobs.create({
+  client: 'SkyLine Contractors',
+  description: 'Roof inspection',
+  location: 'Denver, CO',
+  rate: 500.00
+});
+
+// Get flights
+const flights = await client.flights.list({ jobId: job.id });
+
+// Generate invoice
+const invoice = await client.invoices.create({
+  jobId: job.id,
+  rateType: 'hourly',
+  sendToClient: true
+});</div>
+
+<h2 id="go-sdk" style="color: #facc15; margin-top: 3rem; margin-bottom: 1.5rem;">Go SDK</h2>
+
+<div class="code-block">import "github.com/colonycoreio/colonycore-go"
+
+client := colonycore.New("YOUR_API_KEY")
+
+// Create job
+job, err := client.Jobs.Create(ctx, &colonycore.JobCreateRequest{
+    Client:      "SkyLine Contractors",
+    Description: "Roof inspection",
+    Location:    "Denver, CO",
+    Rate:        500.00,
+})
+
+// List flights
+flights, err := client.Flights.List(ctx, job.ID)
+
+// Create invoice
+invoice, err := client.Invoices.Create(ctx, &colonycore.InvoiceCreateRequest{
+    JobID:        job.ID,
+    RateType:     "hourly",
+    SendToClient: true,
+})</div>
+
+<div style="background: rgba(34, 197, 94, 0.05); border-left: 3px solid #22c55e; padding: 1.5rem; margin-top: 3rem; border-radius: 4px;">
+<h3 style="color: #22c55e; margin-bottom: 1rem;">Need Help?</h3>
+<p style="color: #9ca3af;">Email <code>api@colonycore.io</code> for integration support, or join our <a href="contact.html" style="color: #facc15;">Slack community</a> for developer discussions.</p>
+</div>
+
+</div>
+</div>
+
+</main>
+
+<footer style="background: #06090f; border-top: 1px solid #1f2937; padding: 3rem 0; margin-top: 4rem;">
+<div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+<div>
+<h4 style="color: #facc15; margin-bottom: 1rem;">Help</h4>
+<ul style="list-style: none; padding: 0;">
+<li style="margin-bottom: 0.5rem;"><a href="help.html" style="color: #9ca3af;">Help Center</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="api-documentation.html" style="color: #9ca3af;">API Docs</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="contact.html" style="color: #9ca3af;">Contact Support</a></li>
+</ul>
+</div>
+<div>
+<h4 style="color: #facc15; margin-bottom: 1rem;">Product</h4>
+<ul style="list-style: none; padding: 0;">
+<li style="margin-bottom: 0.5rem;"><a href="features.html" style="color: #9ca3af;">Features</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="pricing.html" style="color: #9ca3af;">Pricing</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="contact.html" style="color: #9ca3af;">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 style="color: #facc15; margin-bottom: 1rem;">Company</h4>
+<p style="color: #9ca3af; font-size: 0.9rem;">Colony Core, LLC<br>→ En route to the next job</p>
+</div>
+</div>
+<div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #1f2937; text-align: center; color: #6b7280; font-size: 0.9rem;">
+<p>&copy; 2025 Colony Core, LLC. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+</body>
+</html>

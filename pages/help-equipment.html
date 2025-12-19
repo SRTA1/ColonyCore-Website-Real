@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Equipment & Fleet Management | ColonyCore Help</title>
+<meta name="description" content="Track drones, batteries, and maintenance with ColonyCore fleet management.">
+<link rel="canonical" href="https://colonycore.io/pages/help-equipment.html">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="icon" href="../icons/favicon.svg" type="image/svg+xml">
+
+<style>
+.kb-article {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.kb-article h2 {
+  color: #facc15;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #1f2937;
+}
+
+.kb-article h3 {
+  color: #e5e7eb;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.kb-article ol, .kb-article ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.kb-article li {
+  margin-bottom: 0.5rem;
+  color: #9ca3af;
+}
+
+.kb-nav {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+  justify-content: space-between;
+}
+
+.kb-nav a {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #1f2937;
+  border-radius: 6px;
+  color: #9ca3af;
+  transition: all 0.2s;
+}
+
+.kb-nav a:hover {
+  border-color: #facc15;
+  color: #facc15;
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="container">
+<a href="index.html" class="logo">ColonyCore</a>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="features.html">Features</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+</nav>
+
+<main>
+<section style="background: linear-gradient(135deg, rgba(11, 95, 255, 0.05) 0%, rgba(250, 204, 21, 0.05) 100%); padding: 3rem 2rem; border-radius: 12px; margin-bottom: 3rem;">
+<h1>Equipment & Fleet Management</h1>
+<p class="sub">Track drones, batteries, and maintenance. Prevent downtime with proactive alerts.</p>
+<a href="help.html">← Back to Help Center</a>
+</section>
+
+<section class="kb-article">
+<h2 id="add-drones">Add Your Drones to the Fleet</h2>
+<ol>
+<li>Go to Equipment → Drones → "+ Add Drone"</li>
+<li>Fill in:
+  <ul>
+  <li><strong>Model:</strong> DJI M300 RTK, Mini 3 Pro, Phantom 4 Pro, etc.</li>
+  <li><strong>Serial Number:</strong> Found on drone body</li>
+  <li><strong>Purchase Date:</strong> When you bought it</li>
+  <li><strong>Initial Flight Hours:</strong> If transferring from manual tracking</li>
+  <li><strong>Insurance Info:</strong> Policy number and expiration</li>
+  <li><strong>Maintenance Schedule:</strong> Service interval (e.g., every 50 hours)</li>
+  </ul>
+</li>
+<li>Save. Drone is now in your fleet.</li>
+</ol>
+
+<h2 id="battery-health">Monitor Battery Health & Lifespan</h2>
+<p>ColonyCore tracks every battery cycle:</p>
+<ul>
+<li><strong>Cycle Count:</strong> Auto-incremented after each flight</li>
+<li><strong>Health %:</strong> Battery capacity (new = 100%, degraded = 80%)</li>
+<li><strong>Alert Thresholds:</strong> Get notified when health drops below 80%</li>
+<li><strong>Lifespan Estimate:</strong> Predict when battery will need replacement (typically 300-500 cycles)</li>
+</ul>
+
+<h2 id="maintenance-schedule">Set Up Maintenance Schedules</h2>
+<ol>
+<li>Click on a drone → "Maintenance"</li>
+<li>Create maintenance tasks:
+  <ul>
+  <li>Every 50 flight hours: Check propellers, gimbal, motors</li>
+  <li>Every 100 flight hours: Firmware update, sensor calibration</li>
+  <li>Every 200 flight hours: Full overhaul, bearing replacement</li>
+  </ul>
+</li>
+<li>ColonyCore sends reminders when maintenance is due</li>
+<li>Log completion date and notes (technician, cost, issues found)</li>
+</ol>
+
+<h2 id="equipment-utilization">Track Equipment Utilization</h2>
+<p>Dashboard shows real-time status:</p>
+<ul>
+<li><strong>Today's Usage:</strong> Which drones are flying today, which are available</li>
+<li><strong>Monthly Hours:</strong> Total flight hours per drone</li>
+<li><strong>Cost Per Flight Hour:</strong> Calculate true equipment cost (depreciation + maintenance)</li>
+<li><strong>Availability:</strong> Predict when equipment will be ready (charging, maintenance)</li>
+</ul>
+
+<h2 id="bulk-import">Import Equipment from CSV</h2>
+<ol>
+<li>Go to Equipment → Import</li>
+<li>Download template with columns: Model, Serial#, Purchase Date, Flight Hours</li>
+<li>Fill in your equipment data</li>
+<li>Upload and confirm. All equipment added automatically.</li>
+</ol>
+
+<h2 id="depreciation">Calculate Equipment Depreciation</h2>
+<p>Know the true cost of your equipment:</p>
+<ul>
+<li><strong>Asset Value:</strong> Depreciate over lifespan (5 years typical)</li>
+<li><strong>Monthly Cost:</strong> Monthly depreciation + maintenance costs</li>
+<li><strong>Per-Flight Cost:</strong> Equipment cost divided by expected flights</li>
+<li>Use in pricing: $1,000 drone / 500 flights = $2/flight equipment cost</li>
+</ul>
+
+<div style="background: rgba(250, 204, 21, 0.05); padding: 2rem; border-radius: 12px; margin-top: 3rem;">
+<h3>Pro Tips</h3>
+<ul class="list">
+<li>Use accurate serial numbers (needed for insurance and FAA compliance)</li>
+<li>Set maintenance intervals conservatively to prevent failures</li>
+<li>Track repair costs to calculate true cost per flight</li>
+<li>Plan equipment purchases 6 months in advance based on utilization trends</li>
+</ul>
+</div>
+
+<div class="kb-nav">
+<a href="help-flight-logs.html">← Back: Flight Logs</a>
+<a href="help-invoicing.html">Next: Invoicing →</a>
+</div>
+</section>
+</main>
+
+<footer style="background: #06090f; border-top: 1px solid #1f2937; padding: 3rem 0; margin-top: 4rem;">
+<div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+<div>
+<h4 style="color: #facc15; margin-bottom: 1rem;">Help</h4>
+<ul style="list-style: none; padding: 0;">
+<li style="margin-bottom: 0.5rem;"><a href="help.html" style="color: #9ca3af;">Help Center</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="api-documentation.html" style="color: #9ca3af;">API Docs</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="contact.html" style="color: #9ca3af;">Contact Support</a></li>
+</ul>
+</div>
+<div>
+<h4 style="color: #facc15; margin-bottom: 1rem;">Product</h4>
+<ul style="list-style: none; padding: 0;">
+<li style="margin-bottom: 0.5rem;"><a href="features.html" style="color: #9ca3af;">Features</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="pricing.html" style="color: #9ca3af;">Pricing</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="contact.html" style="color: #9ca3af;">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 style="color: #facc15; margin-bottom: 1rem;">Company</h4>
+<p style="color: #9ca3af; font-size: 0.9rem;">Colony Core, LLC<br>→ En route to the next job</p>
+</div>
+</div>
+<div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #1f2937; text-align: center; color: #6b7280; font-size: 0.9rem;">
+<p>&copy; 2025 Colony Core, LLC. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+</body>
+</html>

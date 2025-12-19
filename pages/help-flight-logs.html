@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flight Logs & Compliance | ColonyCore Help</title>
+<meta name="description" content="FAA-compliant flight logging with ColonyCore. Auto-capture, export, and audit-ready records.">
+<link rel="canonical" href="https://colonycore.io/pages/help-flight-logs.html">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="icon" href="../icons/favicon.svg" type="image/svg+xml">
+
+<style>
+.kb-article {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.kb-article h2 {
+  color: #facc15;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #1f2937;
+}
+
+.kb-article h3 {
+  color: #e5e7eb;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.kb-article ol, .kb-article ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.kb-article li {
+  margin-bottom: 0.5rem;
+  color: #9ca3af;
+}
+
+.kb-nav {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+  justify-content: space-between;
+}
+
+.kb-nav a {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #1f2937;
+  border-radius: 6px;
+  color: #9ca3af;
+  transition: all 0.2s;
+}
+
+.kb-nav a:hover {
+  border-color: #facc15;
+  color: #facc15;
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="container">
+<a href="index.html" class="logo">ColonyCore</a>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="features.html">Features</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+</nav>
+
+<main>
+<section style="background: linear-gradient(135deg, rgba(11, 95, 255, 0.05) 0%, rgba(250, 204, 21, 0.05) 100%); padding: 3rem 2rem; border-radius: 12px; margin-bottom: 3rem;">
+<h1>Flight Logs & Compliance</h1>
+<p class="sub">Automatic, FAA-auditable flight records without manual data entry.</p>
+<a href="help.html">← Back to Help Center</a>
+</section>
+
+<section class="kb-article">
+<h2 id="auto-capture">Auto-Capture Flights from Your Drone</h2>
+<p>ColonyCore connects directly to your drone's telemetry data:</p>
+<ol>
+<li>After your flight, connect your drone to ColonyCore via USB or wireless</li>
+<li>ColonyCore reads flight data automatically:
+  <ul>
+  <li>Flight duration (exact minutes)</li>
+  <li>Altitude and distance covered</li>
+  <li>Takeoff and landing coordinates</li>
+  <li>Weather conditions (temperature, wind)</li>
+  <li>Battery used (cycle count)</li>
+  <li>Drone serial number and firmware version</li>
+  </ul>
+</li>
+<li>Link to your job (automatic if job was active during flight)</li>
+<li>Export as PDF or CSV</li>
+</ol>
+
+<h2 id="manual-entry">Manual Flight Log Entry</h2>
+<p>For flights where auto-capture isn't available:</p>
+<ol>
+<li>Click "+ New Flight Log"</li>
+<li>Fill in:
+  <ul>
+  <li>Date and time</li>
+  <li>Duration (minutes)</li>
+  <li>Pilot and crew members</li>
+  <li>Drone used (serial number)</li>
+  <li>Location (takeoff point)</li>
+  <li>Altitude and distance</li>
+  <li>Weather conditions</li>
+  <li>Linked job (required for compliance)</li>
+  </ul>
+</li>
+<li>Save. Can be exported as FAA Form 7711-1 (optional)</li>
+</ol>
+
+<h2 id="faa-compliance">FAA Compliance (Part 107)</h2>
+<p>ColonyCore ensures every log has required fields for Part 107 compliance:</p>
+<ul>
+<li><strong>Pilot certification:</strong> Copy of Part 107 cert on file</li>
+<li><strong>Flight duration:</strong> Auto-recorded to the second</li>
+<li><strong>Airspace:</strong> Automatic altitude limits (400 ft AGL default)</li>
+<li><strong>Crew members:</strong> Visual observer, ground crew logged</li>
+<li><strong>Weather conditions:</strong> Wind speed, precipitation, visibility</li>
+<li><strong>Incident reports:</strong> Near-miss or accident documentation</li>
+</ul>
+
+<h2 id="export">Export Flight Logs for Audits</h2>
+<p>When the FAA asks for records:</p>
+<ol>
+<li>Go to Flights → Export</li>
+<li>Choose:
+  <ul>
+  <li>Date range (e.g., last 30 days)</li>
+  <li>Format: PDF, CSV, or FAA Form 7711-1</li>
+  <li>Filter by pilot, drone, or job type</li>
+  </ul>
+</li>
+<li>PDF is audit-ready with all required signatures and dates</li>
+<li>Can export directly to your insurance provider or FAA auditor</li>
+</ol>
+
+<h2 id="battery-tracking">Maintenance & Battery Tracking</h2>
+<p>Logs automatically track equipment wear:</p>
+<ul>
+<li><strong>Battery cycle count:</strong> Auto-incremented after each flight</li>
+<li><strong>Total flight hours:</strong> Summed for each drone</li>
+<li><strong>Maintenance due:</strong> Alerts when batteries exceed lifespan</li>
+<li><strong>Replacement history:</strong> Log when batteries/props are replaced</li>
+</ul>
+
+<div style="background: rgba(250, 204, 21, 0.05); padding: 2rem; border-radius: 12px; margin-top: 3rem;">
+<h3>Pro Tips</h3>
+<ul class="list">
+<li>Always link flights to jobs for easy reference during audits</li>
+<li>Backup logs monthly (ColonyCore does this automatically)</li>
+<li>Share flight summary with clients as proof of work completed</li>
+<li>Use flight data to calculate true cost per job (flight hours + equipment wear)</li>
+</ul>
+</div>
+
+<div class="kb-nav">
+<a href="help-job-management.html">← Back: Job Management</a>
+<a href="help-equipment.html">Next: Equipment →</a>
+</div>
+</section>
+</main>
+
+<footer style="background: #06090f; border-top: 1px solid #1f2937; padding: 3rem 0; margin-top: 4rem;">
+<div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+<div>
+<h4 style="color: #facc15; margin-bottom: 1rem;">Help</h4>
+<ul style="list-style: none; padding: 0;">
+<li style="margin-bottom: 0.5rem;"><a href="help.html" style="color: #9ca3af;">Help Center</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="api-documentation.html" style="color: #9ca3af;">API Docs</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="contact.html" style="color: #9ca3af;">Contact Support</a></li>
+</ul>
+</div>
+<div>
+<h4 style="color: #facc15; margin-bottom: 1rem;">Product</h4>
+<ul style="list-style: none; padding: 0;">
+<li style="margin-bottom: 0.5rem;"><a href="features.html" style="color: #9ca3af;">Features</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="pricing.html" style="color: #9ca3af;">Pricing</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="contact.html" style="color: #9ca3af;">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 style="color: #facc15; margin-bottom: 1rem;">Company</h4>
+<p style="color: #9ca3af; font-size: 0.9rem;">Colony Core, LLC<br>→ En route to the next job</p>
+</div>
+</div>
+<div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #1f2937; text-align: center; color: #6b7280; font-size: 0.9rem;">
+<p>&copy; 2025 Colony Core, LLC. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+</body>
+</html>

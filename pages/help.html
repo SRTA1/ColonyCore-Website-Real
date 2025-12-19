@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Help Center & Knowledge Base | ColonyCore</title>
+<meta name="description" content="Complete ColonyCore documentation. Guides, tutorials, and troubleshooting for job management, flight logs, equipment, invoicing, and more.">
+<link rel="canonical" href="https://colonycore.io/pages/help.html">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="icon" href="../icons/favicon.svg" type="image/svg+xml">
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<style>
+.kb-search {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  position: relative;
+}
+
+.kb-search input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border: 2px solid #facc15;
+  border-radius: 8px;
+  background: #06090f;
+  color: #e5e7eb;
+  font-size: 1rem;
+}
+
+.kb-search::before {
+  content: '🔍';
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+}
+
+.kb-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.kb-category {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.kb-category:hover {
+  transform: translateY(-4px);
+  border-color: #facc15;
+  box-shadow: 0 8px 24px rgba(250,204,21,0.15);
+}
+
+.kb-category h3 {
+  color: #facc15;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.kb-category p {
+  color: #9ca3af;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.kb-category a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(250,204,21,0.1);
+  color: #facc15;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.kb-category a:hover {
+  background: rgba(250,204,21,0.2);
+}
+
+.kb-articles-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.kb-articles-list a {
+  padding: 1rem;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid #1f2937;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #e5e7eb;
+  transition: all 0.2s;
+}
+
+.kb-articles-list a:hover {
+  background: rgba(250,204,21,0.05);
+  border-color: #facc15;
+  color: #facc15;
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="container">
+<a href="index.html" class="logo">ColonyCore</a>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="features.html">Features</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+</nav>
+
+<main>
+<section style="background: linear-gradient(135deg, rgba(11, 95, 255, 0.05) 0%, rgba(250, 204, 21, 0.05) 100%); padding: 4rem 2rem; border-radius: 12px; margin-bottom: 3rem;">
+<h1 style="font-size: 3rem;">Help Center</h1>
+<p class="sub" style="font-size: 1.25rem;">Complete guides, tutorials, and documentation for ColonyCore. Find answers in seconds.</p>
+
+<div class="kb-search">
+<input type="text" id="kb-search-input" placeholder="Search help articles...">
+</div>
+</section>
+
+<section>
+<h2 style="text-align: center; margin-bottom: 3rem;">Browse by Category</h2>
+
+<div class="kb-categories">
+<div class="kb-category">
+<div style="font-size: 2.5rem; margin-bottom: 1rem;">🚀</div>
+<h3>Getting Started</h3>
+<p>Set up your account, create your first job, and get your team onboarded.</p>
+<a href="help-getting-started.html">View All →</a>
+</div>
+
+<div class="kb-category">
+<div style="font-size: 2.5rem; margin-bottom: 1rem;">📋</div>
+<h3>Job Management</h3>
+<p>Create, schedule, and track jobs from quote to completion.</p>
+<a href="help-job-management.html">View All →</a>
+</div>
+
+<div class="kb-category">
+<div style="font-size: 2.5rem; margin-bottom: 1rem;">✈️</div>
+<h3>Flight Logs & Compliance</h3>
+<p>Auto-capture flights, maintain FAA compliance, and export records.</p>
+<a href="help-flight-logs.html">View All →</a>
+</div>
+
+<div class="kb-category">
+<div style="font-size: 2.5rem; margin-bottom: 1rem;">🔋</div>
+<h3>Equipment & Fleet</h3>
+<p>Track drones, batteries, and maintenance schedules.</p>
+<a href="help-equipment.html">View All →</a>
+</div>
+
+<div class="kb-category">
+<div style="font-size: 2.5rem; margin-bottom: 1rem;">💰</div>
+<h3>Invoicing & Payments</h3>
+<p>Generate invoices, accept payments, and manage cash flow.</p>
+<a href="help-invoicing.html">View All →</a>
+</div>
+
+<div class="kb-category">
+<div style="font-size: 2.5rem; margin-bottom: 1rem;">🛠️</div>
+<h3>API & Integrations</h3>
+<p>Integrate with your tools via REST API and webhooks.</p>
+<a href="api-documentation.html">View All →</a>
+</div>
+
+<div class="kb-category">
+<div style="font-size: 2.5rem; margin-bottom: 1rem;">🎬</div>
+<h3>Customer Stories</h3>
+<p>Watch how drone operators scaled their business with ColonyCore.</p>
+<a href="testimonials-video.html">View All →</a>
+</div>
+</div>
+</section>
+
+<section style="background: rgba(250, 204, 21, 0.05); padding: 3rem 2rem; border-radius: 12px; margin-top: 4rem;">
+<h2 style="text-align: center; margin-bottom: 2rem;">Popular Articles</h2>
+<div class="kb-articles-list">
+<a href="help-getting-started.html#onboarding">✓ Onboarding your team in 30 minutes</a>
+<a href="help-job-management.html#first-job">✓ Create your first job and schedule pilots</a>
+<a href="help-flight-logs.html#auto-capture">✓ Auto-capture flights from your drone</a>
+<a href="help-equipment.html#battery-health">✓ Track battery health and lifespan</a>
+<a href="help-invoicing.html#create-invoice">✓ Generate and send an invoice in 60 seconds</a>
+<a href="api-documentation.html">✓ REST API: Authentication and getting started</a>
+</div>
+</section>
+
+<section style="text-align: center; margin-top: 4rem;">
+<h2 style="margin-bottom: 1rem;">Can't find what you're looking for?</h2>
+<p style="color: #9ca3af; margin-bottom: 2rem;">Get help from our team within 24 hours.</p>
+<a class="btn" href="contact.html" style="font-size: 1rem; padding: 0.85rem 1.5rem;">Contact Support</a>
+</section>
+</main>
+
+<footer style="background: #06090f; border-top: 1px solid #1f2937; padding: 3rem 0; margin-top: 4rem;">
+<div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+<div>
+<h4 style="color: #facc15; margin-bottom: 1rem;">Product</h4>
+<ul style="list-style: none; padding: 0;">
+<li style="margin-bottom: 0.5rem;"><a href="features.html" style="color: #9ca3af;">Features</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="pricing.html" style="color: #9ca3af;">Pricing</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="contact.html" style="color: #9ca3af;">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 style="color: #facc15; margin-bottom: 1rem;">Resources</h4>
+<ul style="list-style: none; padding: 0;">
+<li style="margin-bottom: 0.5rem;"><a href="help.html" style="color: #9ca3af;">Help Center</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="api-documentation.html" style="color: #9ca3af;">API Docs</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="blog.html" style="color: #9ca3af;">Blog</a></li>
+</ul>
+</div>
+<div>
+<h4 style="color: #facc15; margin-bottom: 1rem;">Trust & Security</h4>
+<ul style="list-style: none; padding: 0;">
+<li style="margin-bottom: 0.5rem;"><a href="security.html" style="color: #9ca3af;">Security & Compliance</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="privacy.html" style="color: #9ca3af;">Privacy Policy</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="terms.html" style="color: #9ca3af;">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 style="color: #facc15; margin-bottom: 1rem;">Company</h4>
+<p style="color: #9ca3af; font-size: 0.9rem;">Colony Core, LLC<br>→ En route to the next job</p>
+</div>
+</div>
+<div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #1f2937; text-align: center; color: #6b7280; font-size: 0.9rem;">
+<p>&copy; 2025 Colony Core, LLC. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+<script>
+// Simple search across KB categories
+document.getElementById('kb-search-input')?.addEventListener('input', function(e) {
+  const query = e.target.value.toLowerCase();
+  if (query.length === 0) return;
+  
+  // In a real implementation, this would search a backend or local index
+  console.log('Searching for:', query);
+});
+</script>
+</body>
+</html>

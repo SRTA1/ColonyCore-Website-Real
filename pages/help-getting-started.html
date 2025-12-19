@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Getting Started | ColonyCore Help</title>
+<meta name="description" content="Get started with ColonyCore: account setup, first job creation, team onboarding, and API basics.">
+<link rel="canonical" href="https://colonycore.io/pages/help-getting-started.html">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="icon" href="../icons/favicon.svg" type="image/svg+xml">
+
+<style>
+.kb-article {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.kb-article h2 {
+  color: #facc15;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #1f2937;
+}
+
+.kb-article h3 {
+  color: #e5e7eb;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.kb-article ol, .kb-article ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.kb-article li {
+  margin-bottom: 0.5rem;
+  color: #9ca3af;
+}
+
+.kb-article code {
+  background: #111827;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  color: #facc15;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+.kb-article pre {
+  background: #111827;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.kb-article pre code {
+  padding: 0;
+  background: none;
+  color: #e5e7eb;
+}
+
+.kb-nav {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+  justify-content: space-between;
+}
+
+.kb-nav a {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #1f2937;
+  border-radius: 6px;
+  color: #9ca3af;
+  transition: all 0.2s;
+}
+
+.kb-nav a:hover {
+  border-color: #facc15;
+  color: #facc15;
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="container">
+<a href="index.html" class="logo">ColonyCore</a>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="features.html">Features</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+</nav>
+
+<main>
+<section style="background: linear-gradient(135deg, rgba(11, 95, 255, 0.05) 0%, rgba(250, 204, 21, 0.05) 100%); padding: 3rem 2rem; border-radius: 12px; margin-bottom: 3rem;">
+<h1>Getting Started with ColonyCore</h1>
+<p class="sub">Everything you need to launch in the first 30 minutes.</p>
+<a href="help.html">← Back to Help Center</a>
+</section>
+
+<section class="kb-article">
+<h2 id="onboarding">Onboarding Your Team in 30 Minutes</h2>
+<p>Step-by-step guide to get your entire operation live.</p>
+<ol>
+<li><strong>Create your account:</strong> Sign up at colonycore.io/signup. Choose your plan (Starter, Professional, or Enterprise).</li>
+<li><strong>Add your company:</strong> Enter company name, location, contact info, and industry (construction, agriculture, real estate, etc.).</li>
+<li><strong>Set up your fleet:</strong> Add your drones (DJI M300, Mini 3 Pro, etc.) with serial numbers and current condition.</li>
+<li><strong>Invite your team:</strong> Add email addresses for pilots, dispatchers, and admin staff. Set their roles (Pilot, Dispatcher, Admin).</li>
+<li><strong>Create your first job:</strong> Click "+ New Job" → Fill in client name, location, job type, and assigned pilot.</li>
+<li><strong>That's it!</strong> Your team can now log in and start using ColonyCore.</li>
+</ol>
+
+<h2 id="first-job">Create Your First Job</h2>
+<p>Jobs are the backbone of ColonyCore. Here's how to create one:</p>
+<ol>
+<li>Click "+ New Job" on the dashboard</li>
+<li>Fill in:
+  <ul>
+  <li><strong>Client:</strong> Name or create new client</li>
+  <li><strong>Location:</strong> Address for the job site</li>
+  <li><strong>Job Type:</strong> Inspection, Survey, Mapping, Marketing, etc.</li>
+  <li><strong>Pilot Assignment:</strong> Select which pilot will fly</li>
+  <li><strong>Equipment:</strong> Which drones/batteries to use</li>
+  <li><strong>Notes:</strong> Any special instructions</li>
+  </ul>
+</li>
+<li>Save. Your pilot gets a notification and can check the job details from their mobile app.</li>
+</ol>
+
+<h2 id="flight-capture">Capture Your First Flight</h2>
+<p>Once a flight is completed, ColonyCore auto-captures flight data:</p>
+<ol>
+<li>Pilot completes job and returns to base</li>
+<li>Pilot uploads flight footage in the mobile app (tap "Upload Flight")</li>
+<li>ColonyCore automatically logs:
+  <ul>
+  <li>Flight duration (taken from drone telemetry)</li>
+  <li>Altitude and distance covered</li>
+  <li>Weather conditions (if available)</li>
+  <li>Drone used (captured from SN)</li>
+  <li>Battery cycle count</li>
+  </ul>
+</li>
+<li>Flight is marked "Complete" and linked to the job automatically</li>
+</ol>
+
+<h2 id="team-roles">Understanding Team Roles</h2>
+<p><strong>Pilot:</strong> Views assigned jobs, uploads flights, can message client.</p>
+<p><strong>Dispatcher:</strong> Creates jobs, assigns pilots, tracks status, handles scheduling.</p>
+<p><strong>Admin:</strong> Full access. Can create/manage clients, set pricing, view reports.</p>
+
+<h2 id="api-basics">API Basics (Developers)</h2>
+<p>Get your API key from Settings → Integrations → API Keys.</p>
+<pre><code>curl -X GET https://api.colonycore.io/jobs \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json"</code></pre>
+<p>Response includes all active jobs with status, assigned pilot, and dates.</p>
+
+<div style="background: rgba(250, 204, 21, 0.05); padding: 2rem; border-radius: 12px; margin-top: 3rem;">
+<h3>Next Steps</h3>
+<ul class="list">
+<li>Check out <a href="help-job-management.html">Job Management Guide</a> for advanced features</li>
+<li>Read <a href="help-flight-logs.html">Flight Logs & Compliance</a> to stay FAA audit-ready</li>
+<li>Learn about <a href="help-invoicing.html">Invoicing & Payments</a> to get paid faster</li>
+</ul>
+</div>
+
+<div class="kb-nav">
+<a href="help.html">← Back to Help</a>
+<a href="help-job-management.html">Next: Job Management →</a>
+</div>
+</section>
+</main>
+
+<footer style="background: #06090f; border-top: 1px solid #1f2937; padding: 3rem 0; margin-top: 4rem;">
+<div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+<div>
+<h4 style="color: #facc15; margin-bottom: 1rem;">Help</h4>
+<ul style="list-style: none; padding: 0;">
+<li style="margin-bottom: 0.5rem;"><a href="help.html" style="color: #9ca3af;">Help Center</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="api-documentation.html" style="color: #9ca3af;">API Docs</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="contact.html" style="color: #9ca3af;">Contact Support</a></li>
+</ul>
+</div>
+<div>
+<h4 style="color: #facc15; margin-bottom: 1rem;">Product</h4>
+<ul style="list-style: none; padding: 0;">
+<li style="margin-bottom: 0.5rem;"><a href="features.html" style="color: #9ca3af;">Features</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="pricing.html" style="color: #9ca3af;">Pricing</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="contact.html" style="color: #9ca3af;">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 style="color: #facc15; margin-bottom: 1rem;">Company</h4>
+<p style="color: #9ca3af; font-size: 0.9rem;">Colony Core, LLC<br>→ En route to the next job</p>
+</div>
+</div>
+<div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #1f2937; text-align: center; color: #6b7280; font-size: 0.9rem;">
+<p>&copy; 2025 Colony Core, LLC. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+</body>
+</html>

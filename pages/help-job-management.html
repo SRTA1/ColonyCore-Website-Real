@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Management | ColonyCore Help</title>
+<meta name="description" content="ColonyCore Job Management: create, schedule, assign, and track drone jobs from quote to invoice.">
+<link rel="canonical" href="https://colonycore.io/pages/help-job-management.html">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="icon" href="../icons/favicon.svg" type="image/svg+xml">
+
+<style>
+.kb-article {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.kb-article h2 {
+  color: #facc15;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #1f2937;
+}
+
+.kb-article h3 {
+  color: #e5e7eb;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.kb-article ol, .kb-article ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.kb-article li {
+  margin-bottom: 0.5rem;
+  color: #9ca3af;
+}
+
+.kb-article code {
+  background: #111827;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  color: #facc15;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+.kb-nav {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+  justify-content: space-between;
+}
+
+.kb-nav a {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #1f2937;
+  border-radius: 6px;
+  color: #9ca3af;
+  transition: all 0.2s;
+}
+
+.kb-nav a:hover {
+  border-color: #facc15;
+  color: #facc15;
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="container">
+<a href="index.html" class="logo">ColonyCore</a>
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="features.html">Features</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+</nav>
+
+<main>
+<section style="background: linear-gradient(135deg, rgba(11, 95, 255, 0.05) 0%, rgba(250, 204, 21, 0.05) 100%); padding: 3rem 2rem; border-radius: 12px; margin-bottom: 3rem;">
+<h1>Job Management</h1>
+<p class="sub">Create, schedule, assign, and track drone jobs from quote to payment.</p>
+<a href="help.html">← Back to Help Center</a>
+</section>
+
+<section class="kb-article">
+<h2 id="first-job">Create Your First Job</h2>
+<ol>
+<li>Click "+ New Job" on the dashboard</li>
+<li>Fill in job details:
+  <ul>
+  <li><strong>Client Name:</strong> Create new or select existing</li>
+  <li><strong>Job Type:</strong> Inspection, Survey, Mapping, Marketing, Real Estate, etc.</li>
+  <li><strong>Location:</strong> Site address</li>
+  <li><strong>Pilot Assignment:</strong> Select from available pilots</li>
+  <li><strong>Equipment:</strong> Drones and batteries needed</li>
+  <li><strong>Scheduled Date:</strong> When the job will happen</li>
+  <li><strong>Notes:</strong> Any special requirements or instructions</li>
+  </ul>
+</li>
+<li>Save and click "Send to Pilot"</li>
+<li>Pilot receives notification on mobile app</li>
+</ol>
+
+<h2 id="scheduling">Advanced Scheduling</h2>
+<p>Use the visual calendar to manage multiple jobs and pilots:</p>
+<ul>
+<li><strong>Drag-and-drop:</strong> Move jobs between dates and pilots</li>
+<li><strong>Pilot conflicts:</strong> Highlighted automatically if pilot is already assigned</li>
+<li><strong>Color-coding:</strong> Different colors for job types (red=urgent, yellow=standard, green=complete)</li>
+<li><strong>Recurring jobs:</strong> Set up jobs that repeat daily/weekly (e.g., daily site inspections)</li>
+</ul>
+
+<h2 id="job-status">Job Status Tracking</h2>
+<p>Every job moves through these statuses:</p>
+<ul>
+<li><strong>Quote:</strong> Initial stage, waiting for client approval</li>
+<li><strong>Scheduled:</strong> Client approved, pilot assigned</li>
+<li><strong>In Progress:</strong> Pilot is flying the job</li>
+<li><strong>Complete:</strong> Flight finished, data uploaded</li>
+<li><strong>Invoiced:</strong> Invoice sent to client</li>
+<li><strong>Paid:</strong> Payment received</li>
+</ul>
+
+<h2 id="bulk-import">Bulk Import Jobs from CSV</h2>
+<p>Import multiple jobs at once using a CSV file:</p>
+<ol>
+<li>Go to Jobs → Import</li>
+<li>Download the template CSV</li>
+<li>Fill in columns: Client, Job Type, Location, Pilot, Date, Price</li>
+<li>Upload and confirm mapping</li>
+<li>All jobs created automatically</li>
+</ol>
+
+<h2 id="customer-portal">Customer Portal & Communication</h2>
+<p>Clients can track job progress:</p>
+<ul>
+<li>Clients get a unique link to view their jobs</li>
+<li>They see real-time status updates (Scheduled → In Progress → Complete)</li>
+<li>Pilots can send updates and photos via the app</li>
+<li>Clients get notified when deliverables are ready</li>
+</ul>
+
+<h2 id="pricing">Job Pricing & Rate Cards</h2>
+<p>Set up pricing rules by job type:</p>
+<ol>
+<li>Go to Settings → Pricing</li>
+<li>Create a rate card:
+  <ul>
+  <li><strong>Per-hour rate:</strong> $200/hour for inspections</li>
+  <li><strong>Per-job flat rate:</strong> $500 for real estate photos</li>
+  <li><strong>Per-acre pricing:</strong> $10/acre for agricultural mapping</li>
+  </ul>
+</li>
+<li>ColonyCore auto-calculates invoice totals based on flight time + rate</li>
+<li>Add markup for profit margin (e.g., 30% markup on equipment costs)</li>
+</ol>
+
+<div style="background: rgba(250, 204, 21, 0.05); padding: 2rem; border-radius: 12px; margin-top: 3rem;">
+<h3>Pro Tips</h3>
+<ul class="list">
+<li>Use job templates to save time creating similar jobs</li>
+<li>Set buffer time between jobs (e.g., 30 min for travel)</li>
+<li>Use pilot notes to capture weather, obstacles, client feedback</li>
+<li>Link jobs to flights automatically for compliance tracking</li>
+</ul>
+</div>
+
+<div class="kb-nav">
+<a href="help-getting-started.html">← Back: Getting Started</a>
+<a href="help-flight-logs.html">Next: Flight Logs →</a>
+</div>
+</section>
+</main>
+
+<footer style="background: #06090f; border-top: 1px solid #1f2937; padding: 3rem 0; margin-top: 4rem;">
+<div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+<div>
+<h4 style="color: #facc15; margin-bottom: 1rem;">Help</h4>
+<ul style="list-style: none; padding: 0;">
+<li style="margin-bottom: 0.5rem;"><a href="help.html" style="color: #9ca3af;">Help Center</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="api-documentation.html" style="color: #9ca3af;">API Docs</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="contact.html" style="color: #9ca3af;">Contact Support</a></li>
+</ul>
+</div>
+<div>
+<h4 style="color: #facc15; margin-bottom: 1rem;">Product</h4>
+<ul style="list-style: none; padding: 0;">
+<li style="margin-bottom: 0.5rem;"><a href="features.html" style="color: #9ca3af;">Features</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="pricing.html" style="color: #9ca3af;">Pricing</a></li>
+<li style="margin-bottom: 0.5rem;"><a href="contact.html" style="color: #9ca3af;">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 style="color: #facc15; margin-bottom: 1rem;">Company</h4>
+<p style="color: #9ca3af; font-size: 0.9rem;">Colony Core, LLC<br>→ En route to the next job</p>
+</div>
+</div>
+<div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #1f2937; text-align: center; color: #6b7280; font-size: 0.9rem;">
+<p>&copy; 2025 Colony Core, LLC. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
